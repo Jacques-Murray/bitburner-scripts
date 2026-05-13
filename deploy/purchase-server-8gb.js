@@ -44,7 +44,7 @@ export async function main(ns) {
                (ns.args[0] === "--all" && ns.args[1] ? Number(ns.args[1]) : 8));
 
   const cost = ns.cloud.getServerCost(ram);
-  const maxServers = ns.getPurchasedServerLimit();
+  const maxServers = ns.cloud.getServerLimit();
   const currentServers = ns.getPurchasedServers().length;
   const availableSlots = maxServers - currentServers;
 
